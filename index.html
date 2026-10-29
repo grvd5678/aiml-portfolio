@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gourav Das | AI/ML & GenAI Engineer Portfolio</title>
+  <meta name="description" content="AI/ML & GenAI Engineer specializing in production-grade RAG systems, explainable ML models, and high-throughput cloud APIs." />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#080c14',
+              surface: '#0f172a',
+              card: '#131d31',
+              cyan: '#06b6d4',
+              purple: '#a855f7',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-[#080c14] text-slate-100 antialiased relative selection:bg-cyan-500 selection:text-black">
+
+  <!-- Ambient Glows -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Top Glass Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition transform">
+          GD
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-lg text-white tracking-wide group-hover:text-cyan-400 transition">
+            GOURAV DAS
+          </span>
+          <span class="text-[11px] font-mono text-cyan-400 tracking-wider">AI/ML & GenAI Engineer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium">
+        <a href="#hero" class="nav-link text-slate-300 hover:text-cyan-400 transition">Overview</a>
+        <a href="#projects" class="nav-link text-slate-300 hover:text-cyan-400 transition">Featured Projects</a>
+        <a href="#inspector" class="nav-link text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          Live Inspector
+        </a>
+        <a href="#skills" class="nav-link text-slate-300 hover:text-cyan-400 transition">Skill Matrix</a>
+        <a href="#experience" class="nav-link text-slate-300 hover:text-cyan-400 transition">Experience</a>
+        <a href="#education" class="nav-link text-slate-300 hover:text-cyan-400 transition">Education</a>
+        <a href="#contact" class="nav-link text-slate-300 hover:text-cyan-400 transition">Contact</a>
+      </nav>
+
+      <!-- Action Button: Download Resume & Socials -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="https://github.com/grvd5678" target="_blank" rel="noopener noreferrer" 
+           class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/50 transition" title="GitHub Profile">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/gourav-das-7a94a02b1/" target="_blank" rel="noopener noreferrer" 
+           class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:border-cyan-500/50 transition" title="LinkedIn Profile">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+          </svg>
+        </a>
+        <a href="assets/Gourav_Das_Resume_AIML.pdf" download="Gourav_Das_Resume_AIML.pdf" 
+           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-sm font-semibold hover:bg-cyan-500 hover:text-black transition shadow-lg shadow-cyan-500/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          Download Resume
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#0d1424] border-b border-slate-800 px-6 py-6 space-y-4">
+      <a href="#hero" class="block text-slate-300 hover:text-cyan-400 text-base">Overview</a>
+      <a href="#projects" class="block text-slate-300 hover:text-cyan-400 text-base">Featured Projects</a>
+      <a href="#inspector" class="block text-slate-300 hover:text-cyan-400 text-base flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        Live Inspector
+      </a>
+      <a href="#skills" class="block text-slate-300 hover:text-cyan-400 text-base">Skill Matrix</a>
+      <a href="#experience" class="block text-slate-300 hover:text-cyan-400 text-base">Experience</a>
+      <a href="#education" class="block text-slate-300 hover:text-cyan-400 text-base">Education & Certs</a>
+      <a href="#contact" class="block text-slate-300 hover:text-cyan-400 text-base">Contact</a>
+      <div class="flex items-center gap-3 pt-2">
+        <a href="https://github.com/grvd5678" target="_blank" rel="noopener noreferrer" 
+           class="flex-1 py-2 text-center rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-mono">
+          GitHub ↗
+        </a>
+        <a href="https://www.linkedin.com/in/gourav-das-7a94a02b1/" target="_blank" rel="noopener noreferrer" 
+           class="flex-1 py-2 text-center rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white text-xs font-mono">
+          LinkedIn ↗
+        </a>
+      </div>
+      <a href="assets/Gourav_Das_Resume_AIML.pdf" download="Gourav_Das_Resume_AIML.pdf" 
+         class="inline-flex items-center gap-2 w-full justify-center px-4 py-2.5 rounded-lg bg-cyan-500 text-black font-semibold text-sm">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+        </svg>
+        Download Resume (PDF)
+      </a>
+    </div>
+  </header>
+
+  <!-- Interactive Background Canvas (Hero Zone) -->
+  <canvas id="neuralCanvas" class="absolute top-0 left-0 w-full h-[850px] pointer-events-none z-0"></canvas>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative pt-36 pb-20 md:pt-44 md:pb-32 overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Text & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Pill -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 relative">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 absolute inset-0 radar-ping"></span>
+            </span>
+            Available for GenAI / LLM & AI/ML Engineer Roles
+          </div>
+
+          <!-- Main Heading -->
+          <div class="space-y-2">
+            <p class="text-slate-400 font-mono text-sm tracking-wide">HELLO, I AM</p>
+            <h1 class="text-4xl sm:text-6xl font-extrabold font-heading text-white tracking-tight">
+              Gourav Das
+            </h1>
+            <h2 class="text-2xl sm:text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-sky-300 to-purple-400 bg-clip-text text-transparent">
+              AI/ML & GenAI Engineer
+            </h2>
+          </div>
+
+          <!-- Specialization Badges -->
+          <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+            <span class="px-3 py-1 rounded-md text-xs font-mono font-medium badge-glow-cyan">RAG Systems</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono font-medium badge-glow-cyan">Gemini 3072-dim Embeddings</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono font-medium badge-glow-purple">Explainable ML (SHAP)</span>
+            <span class="px-3 py-1 rounded-md text-xs font-mono font-medium badge-glow-emerald">AWS Certified Cloud Practitioner</span>
+          </div>
+
+          <!-- Professional Summary Narrative -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Specialized in architecting and deploying <span class="text-cyan-300 font-medium">production-grade RAG pipelines</span>, high-precision <span class="text-purple-300 font-medium">explainable ML models</span>, and high-throughput serverless microservices. Passionate about eliminating data leakage, optimizing clinical recall (<span class="text-emerald-300 font-medium">84.9%</span>), and guaranteeing zero-hallucination guardrails.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold text-sm hover:brightness-110 transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+              Explore Featured Projects
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+            <a href="assets/Gourav_Das_Resume_AIML.pdf" download="Gourav_Das_Resume_AIML.pdf" 
+               class="px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-cyan-400 hover:text-cyan-300 transition flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+              Download Resume
+            </a>
+            <a href="https://github.com/grvd5678" target="_blank" rel="noopener noreferrer" 
+               class="px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-sm hover:text-white hover:border-cyan-500/50 transition flex items-center gap-2" title="GitHub">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/gourav-das-7a94a02b1/" target="_blank" rel="noopener noreferrer" 
+               class="px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-sm hover:text-white hover:border-cyan-500/50 transition flex items-center gap-2" title="LinkedIn">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+              </svg>
+              LinkedIn
+            </a>
+            <button onclick="copyEmail()" class="px-4 py-3 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 text-sm hover:text-white hover:border-slate-600 transition flex items-center gap-2">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+              </svg>
+              Copy Email
+            </button>
+          </div>
+
+          <!-- Contact Quick Details -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400 font-mono">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              Kolkata, West Bengal
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              gouravdas350@gmail.com
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              +91 89104 18563
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Profile Avatar & Engineering Stat Cards -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          
+          <div class="relative group">
+            <!-- Glowing Ring -->
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-sky-400 to-purple-600 rounded-3xl blur-lg opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            
+            <!-- Profile Image Container -->
+            <div class="relative w-64 h-80 sm:w-72 sm:h-92 rounded-2xl overflow-hidden border-2 border-slate-700/80 bg-slate-900 shadow-2xl">
+              <img src="assets/profile.jpg" alt="Gourav Das - AI/ML Engineer" class="w-full h-full object-cover object-top filter brightness-105 contrast-105" />
+              
+              <!-- Subtle bottom overlay with name -->
+              <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <h3 class="text-sm font-bold text-white">Gourav Das</h3>
+                    <p class="text-[11px] text-cyan-300 font-mono">B.Tech CSE (2026)</p>
+                  </div>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                    AWS Cert.
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Stat Card 1: Latency -->
+            <div class="absolute -top-4 -left-6 bg-slate-900/90 backdrop-blur-md border border-cyan-500/30 rounded-xl p-3 shadow-xl hidden sm:block">
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Cached Query Speed</div>
+              <div class="text-xl font-bold font-mono text-cyan-400 metric-counter" data-target="50" data-prefix="< " data-suffix=" ms">< 50 ms</div>
+              <div class="text-[10px] text-slate-400">SQLite + Hybrid RRF</div>
+            </div>
+
+            <!-- Floating Stat Card 2: Clinical Recall -->
+            <div class="absolute -bottom-6 -right-6 bg-slate-900/90 backdrop-blur-md border border-purple-500/30 rounded-xl p-3 shadow-xl hidden sm:block">
+              <div class="text-[10px] font-mono text-slate-400 uppercase">Clinical Recall</div>
+              <div class="text-xl font-bold font-mono text-purple-400 metric-counter" data-target="84.9" data-decimals="1" data-suffix="%">84.9%</div>
+              <div class="text-[10px] text-slate-400">SHAP Attributed</div>
+            </div>
+
+          </div>
+
+          <!-- Quick Highlight Metrics Row -->
+          <div class="grid grid-cols-3 gap-3 w-full max-w-md mt-10">
+            <div class="glass-panel p-3 rounded-xl text-center">
+              <div class="text-xs font-mono text-slate-400">Dense Dim</div>
+              <div class="text-lg font-bold text-cyan-400 font-mono metric-counter" data-target="3072">3072</div>
+              <div class="text-[10px] text-slate-400">Gemini Vectors</div>
+            </div>
+            <div class="glass-panel p-3 rounded-xl text-center">
+              <div class="text-xs font-mono text-slate-400">NLP Accuracy</div>
+              <div class="text-lg font-bold text-emerald-400 font-mono metric-counter" data-target="98.57" data-decimals="2" data-suffix="%">98.57%</div>
+              <div class="text-[10px] text-slate-400">0.999 AUC-ROC</div>
+            </div>
+            <div class="glass-panel p-3 rounded-xl text-center">
+              <div class="text-xs font-mono text-slate-400">Cloud Idle Cost</div>
+              <div class="text-lg font-bold text-amber-400 font-mono">$0.00</div>
+              <div class="text-[10px] text-slate-400">ECS Fargate</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS SECTION -->
+  <section id="projects" class="py-24 relative border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            Production Architectures & Systems
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+            Featured Projects
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+            Real-world systems engineered with rigorous evaluation metrics, zero-leakage validation splits, and cloud-native infrastructure.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+          <button data-filter="all" class="filter-btn px-3.5 py-1.5 rounded-lg border border-cyan-500 bg-cyan-500/20 text-cyan-400 text-xs font-mono font-medium transition">
+            All (4)
+          </button>
+          <button data-filter="genai" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs font-mono font-medium transition">
+            GenAI & RAG
+          </button>
+          <button data-filter="ml" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs font-mono font-medium transition">
+            ML & XAI
+          </button>
+          <button data-filter="cloud" class="filter-btn px-3.5 py-1.5 rounded-lg border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs font-mono font-medium transition">
+            Cloud & Serverless
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- PROJECT 1: DocuMind AI -->
+        <div class="project-card glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group" data-category="genai cloud">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                Hybrid RAG Platform
+              </span>
+              <span class="text-xs font-mono text-slate-400">Oct 2026</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition">
+              DocuMind AI
+            </h3>
+            <p class="text-xs font-mono text-cyan-400/90 mb-4">
+              Production-Grade RAG Document Platform with Sub-50ms Latency
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Architected a modular document-grounded Q&A platform over complex multi-page PDFs with verifiable page citations using an asynchronous 
+              <span class="text-white font-medium">FastAPI</span> backend (Pydantic v2) and <span class="text-white font-medium">React 19</span> interface.
+            </p>
+
+            <!-- Key Engineering Highlights -->
+            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Hybrid Retrieval:</strong> Combines ChromaDB dense vector search (<span class="text-cyan-300">Gemini 3072-dim embeddings</span>) + BM25 sparse keyword search via <span class="text-cyan-300">Reciprocal Rank Fusion (RRF)</span>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Faithfulness Guardrail:</strong> Automated response entailment scoring preventing ungrounded hallucinations.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Speed & Deployment:</strong> SQLite query cache serving repeat questions in <span class="text-emerald-400 font-mono">&lt;50ms</span>; deployed on <span class="text-amber-300">AWS EC2</span> behind Nginx reverse proxy.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">FastAPI</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">React 19</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">LangChain</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">ChromaDB</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Gemini 3072d</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">BM25 + RRF</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">AWS EC2</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <a href="https://rag-doc-assistant-pearl.vercel.app/" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-semibold hover:bg-cyan-500 hover:text-black transition shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Live Demo ↗
+              </a>
+              <button onclick="openArchitectureModal('documind')" class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-cyan-300 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Architecture Flow
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+              Latency: &lt;50ms
+            </span>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: Swachh.ai -->
+        <div class="project-card glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group" data-category="genai cloud">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                Serverless Decision Engine
+              </span>
+              <span class="text-xs font-mono text-slate-400">Oct 2026</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-2xl font-bold text-white group-hover:text-purple-300 transition">
+              Swachh.ai
+            </h3>
+            <p class="text-xs font-mono text-purple-400/90 mb-4">
+              Cloud-Native Regulatory Decision RAG (Bharat Builds Tour — WeMakeDevs & AWS)
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Built solo for <span class="text-white font-medium">Environmental Hacks</span>: a location-aware regulatory engine providing legally grounded waste disposal pathways derived from Indian statutory frameworks (SWM 2016, Battery Rules 2022).
+            </p>
+
+            <!-- Key Engineering Highlights -->
+            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">›</span>
+                <span><strong>3-Tier Reliability Engine:</strong> Primary Gemini structured JSON extraction (strict Pydantic schema), exponential backoff retry, and deterministic ChromaDB fallback.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">›</span>
+                <span><strong>Zero-Hallucination Fallback:</strong> Local <span class="text-purple-300">all-MiniLM-L6-v2 ONNX</span> embeddings guarantee grounded statutory compliance even during API failures.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-purple-400 font-bold">›</span>
+                <span><strong>Serverless AWS Architecture:</strong> Deployed on <span class="text-amber-300 font-mono">AWS ECS Fargate</span>, S3, ECR, and CloudWatch with <span class="text-emerald-400 font-medium">zero idle VM compute costs</span>.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">AWS ECS Fargate</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Next.js 16</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">FastAPI</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">ChromaDB ONNX</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Gemini API</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Pydantic v2</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <a href="https://swachh-ai-sable.vercel.app/" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/40 text-purple-300 text-xs font-mono font-semibold hover:bg-purple-500 hover:text-black transition shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Live App ↗
+              </a>
+              <button onclick="openArchitectureModal('swachhai')" class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-purple-300 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                Architecture Flow
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">
+              AWS ECS Fargate
+            </span>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: Fake News Detection AI -->
+        <div class="project-card glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group" data-category="ml">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                NLP Classification
+              </span>
+              <span class="text-xs font-mono text-slate-400">Jul 2026</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-2xl font-bold text-white group-hover:text-emerald-300 transition">
+              Fake News Detection AI
+            </h3>
+            <p class="text-xs font-mono text-emerald-400/90 mb-4">
+              IIT Patna Candidate-Shortlisting NLP System (98.57% Accuracy)
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Developed an end-to-end NLP classification pipeline using <span class="text-white font-medium">Scikit-Learn</span> with a stratified 70:10:20 train/validation/test split and fixed random seeds for strict experimental reproducibility.
+            </p>
+
+            <!-- Key Engineering Highlights -->
+            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">›</span>
+                <span><strong>High-Fidelity Benchmarks:</strong> Attained <span class="text-emerald-300 font-mono font-semibold">98.57% accuracy</span>, <span class="text-emerald-300 font-mono">98.63% weighted F1-score</span>, and <span class="text-emerald-300 font-mono font-semibold">0.999 AUC-ROC</span>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">›</span>
+                <span><strong>Zero Data Leakage:</strong> Validated on a completely held-out, unseen test partition of <span class="text-white">8,980 articles</span>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">›</span>
+                <span><strong>Interactive Web App:</strong> Deployed as a real-time Streamlit web app with probability breakdown and token influence.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Scikit-Learn</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">TF-IDF Vectorizer</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Streamlit</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Stratified Split</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Python 3</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <a href="https://fake-news-detection-ffbj9xbmxayxmkifc8fyje.streamlit.app/" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-semibold hover:bg-emerald-500 hover:text-black transition shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Live Demo ↗
+              </a>
+              <button onclick="openArchitectureModal('fakenews')" class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-emerald-300 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                ML Pipeline
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+              AUC: 0.999
+            </span>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: Explainable Heart Disease Decision Support System -->
+        <div class="project-card glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 relative group" data-category="ml">
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <span class="px-2.5 py-1 rounded text-xs font-mono bg-amber-500/10 text-amber-400 border border-amber-500/30">
+                Explainable AI (XAI) Capstone
+              </span>
+              <span class="text-xs font-mono text-slate-400">2024 – 2025</span>
+            </div>
+
+            <!-- Title & Subtitle -->
+            <h3 class="text-2xl font-bold text-white group-hover:text-amber-300 transition">
+              Explainable Heart Disease System
+            </h3>
+            <p class="text-xs font-mono text-amber-400/90 mb-4">
+              B.Tech Capstone — Deduplicated Cleveland Benchmark with SHAP Explainability
+            </p>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Clinical decision support system designed to prevent fatal false negatives in cardiology triage. Rigorously engineered with full model transparency and diagnostic feature attribution.
+            </p>
+
+            <!-- Key Engineering Highlights -->
+            <ul class="space-y-2.5 text-xs text-slate-300 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">›</span>
+                <span><strong>Data Hygiene & Deduplication:</strong> Prevented critical train/test contamination by removing <span class="text-amber-300 font-medium">723 duplicate entries</span> down to 302 unique patients.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">›</span>
+                <span><strong>Clinical Recall Priority:</strong> Optimized sensitivity to eliminate deadly false negatives: achieved <span class="text-emerald-400 font-mono font-semibold">84.9% test recall</span> & <span class="text-emerald-400 font-mono">87.1% ROC-AUC</span>.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">›</span>
+                <span><strong>SHAP TreeExplainer:</strong> Integrated Explainable AI for patient-specific feature attribution in a Flask web application with PDF reports.</span>
+              </li>
+            </ul>
+
+            <!-- Tech Badges -->
+            <div class="flex flex-wrap gap-1.5 mb-6">
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Scikit-Learn</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">SHAP TreeExplainer</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Flask</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">ColumnTransformer</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800/80 text-slate-300 text-[11px] font-mono">Cross-Validation</span>
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <a href="https://heart-disease-predictor-1j4t.onrender.com/" target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/40 text-amber-300 text-xs font-mono font-semibold hover:bg-amber-500 hover:text-black transition shadow-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Live Demo ↗
+              </a>
+              <button onclick="openArchitectureModal('heartdisease')" class="inline-flex items-center gap-1.5 text-xs font-mono text-slate-400 hover:text-amber-300 transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                XAI Pipeline
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">
+              Recall: 84.9%
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE AI ARCHITECTURE & MODEL INSPECTOR -->
+  <section id="inspector" class="py-24 relative bg-[#060a14] border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-medium mb-3">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          LIVE ALGORITHMIC TELEMETRY
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          Interactive Model & Architecture Inspector
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Test real algorithmic workflows in-browser: inspect Hybrid RAG rank fusion math, explore SHAP tree feature attribution, and analyze NLP token weights.
+        </p>
+      </div>
+
+      <!-- Tabbed Control Bar -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+        <button class="inspector-tab-btn inspector-tab-active px-4 py-2 rounded-xl border border-cyan-500 bg-cyan-500/15 text-cyan-300 text-xs sm:text-sm font-mono font-semibold transition" data-target-panel="panel-rag">
+          ⚡ 1. Hybrid RAG & RRF (DocuMind)
+        </button>
+        <button class="inspector-tab-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs sm:text-sm font-mono font-semibold transition" data-target-panel="panel-shap">
+          🩺 2. SHAP Attribution (Heart Disease)
+        </button>
+        <button class="inspector-tab-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs sm:text-sm font-mono font-semibold transition" data-target-panel="panel-nlp">
+          📰 3. NLP Tokenizer (Fake News)
+        </button>
+        <button class="inspector-tab-btn px-4 py-2 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white text-xs sm:text-sm font-mono font-semibold transition" data-target-panel="panel-terminal">
+          💻 4. AI Engineer CLI
+        </button>
+      </div>
+
+      <!-- INSPECTOR PANELS CONTAINER -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-slate-800/90 shadow-2xl relative min-h-[460px]">
+        
+        <!-- PANEL 1: Hybrid RAG & RRF -->
+        <div id="panel-rag" class="inspector-panel block space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-mono text-cyan-400 font-bold uppercase tracking-wider">Dual Indexing & Rank Fusion Simulator</span>
+              <h3 class="text-xl font-bold text-white mt-0.5">DocuMind AI — Hybrid RAG Engine</h3>
+            </div>
+            <div id="ragStatusText" class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/30 w-fit">
+              System Ready // Select a Query Below
+            </div>
+          </div>
+
+          <!-- Query Selection -->
+          <div class="flex flex-wrap items-center gap-3">
+            <span class="text-xs font-mono text-slate-400">Sample Query Presets:</span>
+            <button onclick="runRagSimulation('q1')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 hover:border-cyan-400 hover:text-cyan-300 font-mono transition">
+              1. Battery Waste Rules 2022
+            </button>
+            <button onclick="runRagSimulation('q2')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 hover:border-cyan-400 hover:text-cyan-300 font-mono transition">
+              2. BM25 vs Dense 3072d RRF Math
+            </button>
+            <button onclick="runRagSimulation('q3')" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 hover:border-cyan-400 hover:text-cyan-300 font-mono transition">
+              3. Cleveland Dataset Dedup Proof
+            </button>
+          </div>
+
+          <!-- Dual Column: Dense vs Sparse -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+            <div>
+              <div class="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-cyan-400">
+                <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+                DENSE VECTOR RETRIEVAL (Gemini 3072-dim Cosine)
+              </div>
+              <div id="ragDenseResults" class="space-y-2">
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-center text-xs text-slate-500 font-mono">
+                  Click a preset query above to run dense embedding vector matching.
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-2 text-xs font-mono font-bold text-purple-400">
+                <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                SPARSE KEYWORD RETRIEVAL (BM25 Inverted Index)
+              </div>
+              <div id="ragSparseResults" class="space-y-2">
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-center text-xs text-slate-500 font-mono">
+                  Click a preset query above to run BM25 term frequency matching.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: RRF Ranker & Faithfulness Guardrail -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-800">
+            <div>
+              <span class="text-xs font-mono text-slate-400 block mb-2 font-bold uppercase tracking-wider">Reciprocal Rank Fusion (RRF: k=60)</span>
+              <div id="ragRrfResult">
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-500 font-mono">
+                  Awaiting query execution...
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <span class="text-xs font-mono text-slate-400 block mb-2 font-bold uppercase tracking-wider">Automated Faithfulness Guardrail</span>
+              <div id="ragGuardrailResult">
+                <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-500 font-mono">
+                  Awaiting entailment verification...
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: SHAP Attribution Explorer -->
+        <div id="panel-shap" class="inspector-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-mono text-purple-400 font-bold uppercase tracking-wider">Explainable AI (XAI) Model Interpretation</span>
+              <h3 class="text-xl font-bold text-white mt-0.5">SHAP TreeExplainer & Feature Attribution</h3>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono text-slate-400">Predicted Risk:</span>
+              <span id="shapProbVal" class="text-lg font-bold font-mono text-purple-400">78%</span>
+              <span id="shapRiskBadge" class="text-[11px] font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-300 border border-red-500/40 font-bold">
+                HIGH RISK
+              </span>
+            </div>
+          </div>
+
+          <!-- Interactive Sliders Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+              <div class="flex justify-between items-center mb-2 text-xs">
+                <label class="text-slate-300 font-semibold">Patient Age</label>
+                <span id="valAge" class="font-mono text-cyan-400 font-bold">54</span>
+              </div>
+              <input id="shapAge" type="range" min="29" max="77" value="54" step="1" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
+                <span>29y</span>
+                <span class="text-slate-400">Mean: 54y</span>
+                <span>77y</span>
+              </div>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+              <div class="flex justify-between items-center mb-2 text-xs">
+                <label class="text-slate-300 font-semibold">Max Heart Rate</label>
+                <span id="valThalach" class="font-mono text-cyan-400 font-bold">150 bpm</span>
+              </div>
+              <input id="shapThalach" type="range" min="71" max="202" value="150" step="1" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
+                <span>71 bpm</span>
+                <span class="text-slate-400">Protective</span>
+                <span>202 bpm</span>
+              </div>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+              <div class="flex justify-between items-center mb-2 text-xs">
+                <label class="text-slate-300 font-semibold">ST Depression</label>
+                <span id="valOldpeak" class="font-mono text-cyan-400 font-bold">1.4 mm</span>
+              </div>
+              <input id="shapOldpeak" type="range" min="0.0" max="6.2" value="1.4" step="0.1" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
+                <span>0.0</span>
+                <span class="text-slate-400">Ischemia</span>
+                <span>6.2 mm</span>
+              </div>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-xl border border-slate-800">
+              <div class="flex justify-between items-center mb-2 text-xs">
+                <label class="text-slate-300 font-semibold">Chest Pain Type</label>
+                <span id="valCp" class="font-mono text-cyan-400 font-bold">Asymptomatic</span>
+              </div>
+              <input id="shapCp" type="range" min="0" max="3" value="3" step="1" />
+              <div class="flex justify-between text-[10px] font-mono text-slate-500 mt-1.5">
+                <span>Typical</span>
+                <span>Non-ang</span>
+                <span>Asympt.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SHAP Force Plot Visualization -->
+          <div class="bg-slate-950 p-5 rounded-xl border border-slate-800">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between text-xs font-mono mb-3 gap-2">
+              <span class="text-slate-400 font-bold">SHAP Force Representation (Feature Push Direction)</span>
+              <div class="flex items-center gap-4 text-[11px]">
+                <span class="text-blue-400 flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-blue-500"></span> Blue = Decreases Risk (Protective)
+                </span>
+                <span class="text-red-400 flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded bg-red-500"></span> Red = Increases Risk (Pathology)
+                </span>
+              </div>
+            </div>
+
+            <!-- Dynamic Horizontal Force Bar -->
+            <div class="w-full h-7 rounded-lg overflow-hidden flex bg-slate-900 border border-slate-800 mb-4">
+              <div id="forceBarNeg" class="shap-bar-negative transition-all duration-200" style="width: 35%"></div>
+              <div id="forceBarPos" class="shap-bar-positive transition-all duration-200" style="width: 65%"></div>
+            </div>
+
+            <!-- Feature Attributions Breakdown -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs pt-2 border-t border-slate-900">
+              <div class="p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400 text-[11px] block">ST Depression SHAP</span>
+                <span id="shapValOldpeak" class="font-mono font-bold text-red-400">+0.92</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400 text-[11px] block">Chest Pain SHAP</span>
+                <span id="shapValCp" class="font-mono font-bold text-red-400">+0.78</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400 text-[11px] block">Max Heart Rate SHAP</span>
+                <span id="shapValThalach" class="font-mono font-bold text-blue-400">-0.42</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400 text-[11px] block">Patient Age SHAP</span>
+                <span id="shapValAge" class="font-mono font-bold text-red-400">+0.12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 3: NLP Tokenizer & Calibration -->
+        <div id="panel-nlp" class="inspector-panel hidden space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <span class="text-xs font-mono text-emerald-400 font-bold uppercase tracking-wider">TF-IDF Vector Calibration & Token Influence</span>
+              <h3 class="text-xl font-bold text-white mt-0.5">Fake News Detection NLP Pipeline</h3>
+            </div>
+            <div class="text-right">
+              <div id="nlpGaugeLabel" class="text-xs font-mono text-red-400 font-bold">
+                FABRICATED / SENSATIONAL (FLAGGED)
+              </div>
+              <div class="text-[11px] font-mono text-slate-400">Calibrated Probability: <span id="nlpGaugePercent" class="text-white font-bold">98%</span></div>
+            </div>
+          </div>
+
+          <!-- Sample Preset Buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">Load Test Sample:</span>
+            <button onclick="setNlpPreset('sensational')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:border-emerald-400 font-mono transition">
+              Sensational Headline
+            </button>
+            <button onclick="setNlpPreset('factual')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:border-emerald-400 font-mono transition">
+              Factual News Headline
+            </button>
+            <button onclick="setNlpPreset('clickbait')" class="px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-300 hover:border-emerald-400 font-mono transition">
+              Celebrity Clickbait
+            </button>
+          </div>
+
+          <!-- Text Input Box -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input id="nlpInputText" type="text" value="BREAKING: Secret documents expose shock breakthrough that doctors refuse to tell the public!" 
+                   class="flex-grow bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm font-mono text-slate-200 focus:outline-none focus:border-emerald-400" />
+            <button id="nlpAnalyzeBtn" class="px-6 py-3 rounded-xl bg-emerald-500 text-black font-semibold text-xs font-mono hover:bg-emerald-400 transition whitespace-nowrap">
+              Analyze Tokens
+            </button>
+          </div>
+
+          <!-- Token Highlights Output -->
+          <div class="bg-slate-950 p-5 rounded-xl border border-slate-800">
+            <div class="text-xs font-mono text-slate-400 mb-2 font-bold uppercase tracking-wider">
+              Token Influence Map (TF-IDF Discrimination Weighting):
+            </div>
+            <div id="nlpTokensDisplay" class="p-4 rounded-lg bg-slate-900 border border-slate-800/80 min-h-[60px] leading-relaxed">
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">BREAKING</span>
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">Secret</span>
+              <span class="inline-block px-1 text-slate-300 text-xs font-mono">documents</span>
+              <span class="inline-block px-1 text-slate-300 text-xs font-mono">expose</span>
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">shock</span>
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">breakthrough</span>
+              <span class="inline-block px-1 text-slate-300 text-xs font-mono">that</span>
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">doctors</span>
+              <span class="inline-block px-1.5 py-0.5 m-0.5 rounded token-chip-alert text-xs font-mono font-semibold">refuse</span>
+              <span class="inline-block px-1 text-slate-300 text-xs font-mono">to tell the public!</span>
+            </div>
+
+            <!-- Probability Bar -->
+            <div class="mt-4">
+              <div class="flex justify-between text-[11px] font-mono text-slate-400 mb-1">
+                <span>0% Factual</span>
+                <span>50% Threshold</span>
+                <span>100% Sensational</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-slate-900 border border-slate-800 overflow-hidden">
+                <div id="nlpGaugeBar" class="h-full bg-gradient-to-r from-emerald-500 via-amber-500 to-red-500 transition-all duration-300" style="width: 98%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 4: AI Engineer CLI Terminal -->
+        <div id="panel-terminal" class="inspector-panel hidden space-y-4">
+          <div class="terminal-window p-4 sm:p-6">
+            <!-- Window Bar -->
+            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span class="text-xs font-mono text-slate-400 ml-2">gourav-das@ai-mesh:~</span>
+              </div>
+              <span class="text-[11px] font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800">
+                bash v5.2 (x86_64)
+              </span>
+            </div>
+
+            <!-- Quick Suggestion Buttons -->
+            <div class="flex flex-wrap gap-2 mb-4 text-[11px] font-mono">
+              <span class="text-slate-500 self-center">Quick commands:</span>
+              <button onclick="runTerminalQuickCmd('help')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">help</button>
+              <button onclick="runTerminalQuickCmd('metrics')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">metrics</button>
+              <button onclick="runTerminalQuickCmd('documind')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">documind</button>
+              <button onclick="runTerminalQuickCmd('swachhai')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">swachhai</button>
+              <button onclick="runTerminalQuickCmd('skills')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">skills</button>
+              <button onclick="runTerminalQuickCmd('certs')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">certs</button>
+              <button onclick="runTerminalQuickCmd('contact')" class="px-2 py-0.5 rounded bg-slate-900 text-cyan-300 border border-slate-800 hover:border-cyan-400">contact</button>
+              <button onclick="runTerminalQuickCmd('clear')" class="px-2 py-0.5 rounded bg-slate-900 text-slate-400 border border-slate-800 hover:border-red-400">clear</button>
+            </div>
+
+            <!-- Terminal Output Area -->
+            <div id="terminalOutput" class="h-64 sm:h-72 overflow-y-auto space-y-3 pr-2 text-xs font-mono scroll-smooth">
+              <div class="text-slate-400 text-xs mb-2">
+                Welcome to Gourav Das's AI Engineering CLI. Type <span class="text-cyan-300 font-bold">help</span> or click any quick command above.
+              </div>
+            </div>
+
+            <!-- Terminal Prompt Input -->
+            <div class="flex items-center gap-2 pt-3 mt-2 border-t border-slate-800 font-mono text-xs">
+              <span class="text-cyan-400 font-bold whitespace-nowrap">gourav@ai-engineer:~$</span>
+              <input id="terminalInput" type="text" placeholder="Type a command (e.g. metrics, documind, skills, resume)..." 
+                     class="w-full bg-transparent text-slate-100 focus:outline-none placeholder-slate-600 font-mono text-xs" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <section id="skills" class="py-24 relative bg-[#090e1a]/80 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Technical Capabilities
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          AI/ML Engineering Skill Matrix
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Structured proficiency spanning production GenAI & RAG pipelines, statistical machine learning, backend microservices, and AWS cloud infrastructure.
+        </p>
+      </div>
+
+      <!-- Skills Matrix 4-Column Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: GenAI & RAG -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-cyan-500">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">GenAI & RAG Systems</h3>
+            <p class="text-xs text-slate-400 mb-4">Production retrieval architectures, high-dimensional vector search, and guardrails.</p>
+            
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-cyan-300 font-semibold block">Hybrid Retrieval</span>
+                <span class="text-slate-400 text-[11px]">BM25 + ChromaDB Dense Vectors (RRF)</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-cyan-300 font-semibold block">Vector Embeddings</span>
+                <span class="text-slate-400 text-[11px]">Google Gemini 3072-dim, all-MiniLM-L6-v2 ONNX</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-cyan-300 font-semibold block">Frameworks & LLMs</span>
+                <span class="text-slate-400 text-[11px]">LangChain, Amazon Bedrock, Gemini API</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-cyan-300 font-semibold block">Guardrails & Evaluation</span>
+                <span class="text-slate-400 text-[11px]">Faithfulness & Hallucination Guardrails, Prompt Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: Machine Learning & XAI -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-purple-500">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Applied ML & XAI</h3>
+            <p class="text-xs text-slate-400 mb-4">Statistical modeling, model explanation, and rigorous evaluation pipelines.</p>
+            
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-purple-300 font-semibold block">Scikit-Learn Pipelines</span>
+                <span class="text-slate-400 text-[11px]">ColumnTransformer, StandardScaler, Cross-Val</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-purple-300 font-semibold block">Explainable AI</span>
+                <span class="text-slate-400 text-[11px]">SHAP (TreeExplainer), Feature Attributions</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-purple-300 font-semibold block">Core Algorithms</span>
+                <span class="text-slate-400 text-[11px]">Logistic Regression, Random Forest, SVM, KNN</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-purple-300 font-semibold block">Metrics Optimization</span>
+                <span class="text-slate-400 text-[11px]">Class Imbalance, Clinical Recall, ROC-AUC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: Backend & Cloud APIs -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-emerald-500">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Backend & Cloud</h3>
+            <p class="text-xs text-slate-400 mb-4">High-throughput microservices and cloud deployment architectures.</p>
+            
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-emerald-300 font-semibold block">Python Microservices</span>
+                <span class="text-slate-400 text-[11px]">FastAPI, Flask, Pydantic v2, Uvicorn</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-emerald-300 font-semibold block">AWS Cloud</span>
+                <span class="text-slate-400 text-[11px]">ECS Fargate, EC2, S3, CloudWatch, VPC, IAM</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-emerald-300 font-semibold block">Full-Stack & Web</span>
+                <span class="text-slate-400 text-[11px]">Next.js 16, React 19, Tailwind CSS</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-emerald-300 font-semibold block">DevOps & Data</span>
+                <span class="text-slate-400 text-[11px]">Docker, Nginx, PostgreSQL, SQLite</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4: Languages & Core CS -->
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between border-t-2 border-t-amber-500">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Languages & Core CS</h3>
+            <p class="text-xs text-slate-400 mb-4">Strong theoretical foundations, clean code, and algorithmic rigor.</p>
+            
+            <div class="space-y-2">
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-amber-300 font-semibold block">Languages</span>
+                <span class="text-slate-400 text-[11px]">Python, JavaScript (ES6+), TypeScript, SQL</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-amber-300 font-semibold block">Algorithms & DSA</span>
+                <span class="text-slate-400 text-[11px]">NeetCode 150, OOP, DBMS Foundations</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-amber-300 font-semibold block">Big Data Exposure</span>
+                <span class="text-slate-400 text-[11px]">Hadoop, HDFS, Apache Spark, Hive</span>
+              </div>
+              <div class="p-2 rounded bg-slate-900/70 border border-slate-800/80 text-xs">
+                <span class="text-amber-300 font-semibold block">System Hygiene</span>
+                <span class="text-slate-400 text-[11px]">Linux CLI, Git Version Control, Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & TRAINING TIMELINE -->
+  <section id="experience" class="py-24 relative border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Professional Journey
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">
+          Experience & Training
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Hands-on machine learning engineering and cloud training programs.
+        </p>
+      </div>
+
+      <!-- Timeline Component -->
+      <div class="relative border-l border-slate-800 max-w-4xl mx-auto pl-6 sm:pl-10 space-y-12">
+        
+        <!-- Experience 1 -->
+        <div class="relative group">
+          <span class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-[#080c14] group-hover:scale-125 transition"></span>
+          
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white">ML Intern — Credit Risk & Model Complexity API</h3>
+                <p class="text-sm font-semibold text-cyan-400">LearnDepth Academy LLP (ML-T2-090)</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <a href="https://ml-t2-090-model-complexity.onrender.com/" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500 hover:text-black transition">
+                  <span>Live API Demo</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+                <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+                  Aug 2026 – Sep 2026
+                </span>
+              </div>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              Engineered an end-to-end Credit Risk REST API using Flask and a Scikit-Learn Pipeline with ColumnTransformer, StandardScaler, OneHotEncoder, and Joblib on the OpenML German Credit benchmark.
+            </p>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Complexity vs Business Outcomes:</strong> Demonstrated simple Logistic Regression matched Random Forest at 79.5% accuracy but caught <span class="text-emerald-400 font-semibold">+10% more defaulting applicants</span> (54% vs 44% recall).</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Inference Speed:</strong> Ran <span class="text-cyan-300 font-mono font-semibold">14.6x faster</span> in inference than ensemble tree models.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400 font-bold">›</span>
+                <span><strong>Regulatory Compliance:</strong> Provided linear coefficient transparency essential for ECOA/FCRA regulatory compliance.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="relative group">
+          <span class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-[#080c14] group-hover:scale-125 transition"></span>
+          
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white">AWS re/Start Cloud Trainee</h3>
+                <p class="text-sm font-semibold text-purple-400">Tata Strive — Core AWS & Linux Infrastructure</p>
+              </div>
+              <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 w-fit">
+                Jun 2026 – Oct 2026
+              </span>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Provisioned and configured core AWS cloud services (VPC, EC2, S3, IAM, Security Groups), Linux administration, and network routing in an enterprise-aligned, project-driven curriculum. Led to earning the <span class="text-emerald-400 font-medium">AWS Certified Cloud Practitioner</span> certification.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="relative group">
+          <span class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-[#080c14] group-hover:scale-125 transition"></span>
+          
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-xl font-bold text-white">Big Data Analytics Bootcamp</h3>
+                <p class="text-sm font-semibold text-emerald-400">NIELIT Kolkata (Govt. of India) — Big Data Technologies</p>
+              </div>
+              <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800 w-fit">
+                Feb 2026
+              </span>
+            </div>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Completed a 90-hour government-sponsored program covering distributed Big Data systems (Hadoop, HDFS, Spark, Hive) and applied storage operations on Linux.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <section id="education" class="py-24 relative bg-[#090e1a]/80 border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Education Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-2">
+              <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+              Academic Background
+            </div>
+            <h2 class="text-3xl font-extrabold font-heading text-white">Education</h2>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl relative overflow-hidden border-l-4 border-l-cyan-500">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="text-lg font-bold text-white">B.Tech in Computer Science & Engineering</h3>
+              <span class="text-xs font-mono text-cyan-400 font-semibold bg-cyan-500/10 px-2.5 py-1 rounded">2026</span>
+            </div>
+            <p class="text-sm text-slate-300 font-medium">Future Institute of Engineering and Management (MAKAUT)</p>
+            <div class="mt-4 flex items-center gap-4 text-xs font-mono">
+              <span class="px-3 py-1 rounded bg-slate-900 text-cyan-300 border border-slate-800 font-bold">
+                CGPA: 7.56
+              </span>
+              <span class="text-slate-400">Kolkata, West Bengal</span>
+            </div>
+          </div>
+
+          <div class="glass-panel p-6 rounded-2xl border-l-4 border-l-slate-700 space-y-4">
+            <div>
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-bold text-white">Higher Secondary (Class XII, Science)</span>
+                <span class="text-xs font-mono text-slate-400">2021 | 76.00%</span>
+              </div>
+              <p class="text-xs text-slate-400">Kendriya Vidyalaya Fort William, Kolkata (CBSE)</p>
+            </div>
+            <div class="pt-2 border-t border-slate-800/80">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-bold text-white">Secondary (Class X)</span>
+                <span class="text-xs font-mono text-slate-400">2018 | 61.20%</span>
+              </div>
+              <p class="text-xs text-slate-400">Kendriya Vidyalaya Fort William, Kolkata (CBSE)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Hackathons Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-purple-400 mb-2">
+              <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+              Verified Credentials
+            </div>
+            <h2 class="text-3xl font-extrabold font-heading text-white">Certifications & Hackathons</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition">
+              <div class="text-xs font-mono text-cyan-400 mb-1">Oct 2026</div>
+              <h4 class="text-sm font-bold text-white">AWS Certified Cloud Practitioner</h4>
+              <p class="text-xs text-slate-400 mt-1">Amazon Web Services</p>
+              <div class="mt-3 text-[11px] font-mono text-cyan-300 bg-cyan-500/10 px-2 py-0.5 rounded w-fit">
+                Verified Credential
+              </div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition">
+              <div class="text-xs font-mono text-purple-400 mb-1">Aug 2026</div>
+              <h4 class="text-sm font-bold text-white">Building GenAI with Amazon Bedrock</h4>
+              <p class="text-xs text-slate-400 mt-1">AWS Training & Certification</p>
+              <div class="mt-3 text-[11px] font-mono text-purple-300 bg-purple-500/10 px-2 py-0.5 rounded w-fit">
+                GenAI & Foundation Models
+              </div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition">
+              <div class="text-xs font-mono text-emerald-400 mb-1">Oct 2026</div>
+              <h4 class="text-sm font-bold text-white">Environmental Hacks (Bharat Builds Tour)</h4>
+              <p class="text-xs text-slate-400 mt-1">WeMakeDevs & AWS</p>
+              <div class="mt-3 text-[11px] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded w-fit">
+                Built Swachh.ai
+              </div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition">
+              <div class="text-xs font-mono text-amber-400 mb-1">2023</div>
+              <h4 class="text-sm font-bold text-white">Machine Learning Using Python</h4>
+              <p class="text-xs text-slate-400 mt-1">Ardent Computech</p>
+              <div class="mt-3 text-[11px] font-mono text-amber-300 bg-amber-500/10 px-2 py-0.5 rounded w-fit">
+                Applied ML & Data Science
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT & FOOTER SECTION -->
+  <section id="contact" class="py-24 relative border-t border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-panel rounded-3xl p-8 sm:p-12 relative overflow-hidden text-center max-w-4xl mx-auto">
+        
+        <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 mb-4">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+          Let's Build Intelligent Systems
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight mb-4">
+          Ready to Connect
+        </h2>
+
+        <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+          Whether you have an opening for an <span class="text-cyan-300 font-medium">entry-level GenAI / LLM Engineer</span>, an <span class="text-purple-300 font-medium">AI/ML Engineer</span>, or want to collaborate on high-impact RAG and ML systems, I would love to hear from you.
+        </p>
+
+        <!-- Direct Contact Action Row -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+          <a href="mailto:gouravdas350@gmail.com" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-black font-semibold text-sm hover:brightness-110 transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            Send Direct Email
+          </a>
+          <button onclick="copyEmail()" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-sm hover:border-cyan-400 hover:text-cyan-300 transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            Copy: gouravdas350@gmail.com
+          </button>
+          <a href="https://github.com/grvd5678" target="_blank" rel="noopener noreferrer" 
+             class="px-5 py-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 font-semibold text-sm hover:text-white hover:border-cyan-500/50 transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+            </svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/gourav-das-7a94a02b1/" target="_blank" rel="noopener noreferrer" 
+             class="px-5 py-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 font-semibold text-sm hover:text-white hover:border-cyan-500/50 transition flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="assets/Gourav_Das_Resume_AIML.pdf" download="Gourav_Das_Resume_AIML.pdf" 
+             class="px-5 py-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-slate-300 font-semibold text-sm hover:text-white transition flex items-center gap-2">
+            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Download PDF Resume
+          </a>
+        </div>
+
+        <!-- Phone & Location -->
+        <div class="flex flex-wrap items-center justify-center gap-8 text-xs font-mono text-slate-400 pt-4 border-t border-slate-800/80">
+          <span class="flex items-center gap-2">
+            <span class="text-cyan-400">Phone:</span> +91 89104 18563
+          </span>
+          <span class="flex items-center gap-2">
+            <span class="text-cyan-400">Location:</span> Kolkata, West Bengal, India
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Brand Bottom -->
+      <div class="mt-16 text-center text-xs font-mono text-slate-500">
+        <p>© 2026 Gourav Das — AI/ML & GenAI Engineer. All rights reserved.</p>
+        <p class="mt-1 text-slate-600">Built with HTML5, Tailwind CSS & Neural UI Architecture.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ARCHITECTURE MODAL -->
+  <div id="archModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="glass-panel border border-cyan-500/40 rounded-2xl max-w-2xl w-full p-6 sm:p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      <div id="archModalContent">
+        <!-- Injected dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING FEEDBACK TOAST -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-cyan-500 text-black px-4 py-2.5 rounded-xl font-mono text-xs font-bold shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    Copied to clipboard!
+  </div>
+
+  <!-- Portfolio Logic Script -->
+  <script src="script.js"></script>
+</body>
+</html>
+
